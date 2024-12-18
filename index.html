@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untitled Document</title>
+	<link href="styles/default.css" type="text/css" rel="stylesheet" >
+</head>
+<body>
+<div class="tong">
+<div class="banner">
+	<img src="images/banner.gif" alt="anh" width="960px" height="250px"/>
+</div>
+<div class="menutren">
+	<img class="logo" src="images/logoduan.png" alt="anh" />
+		<ul class="chu">
+			<li><a href=".">TRANG CHỦ</a></li>
+			<li><a href=".">SHOP</a></li>	
+			<li><a href=".">THỂ LOẠI</a></li>
+			<li><a href=".">THIẾT KẾ</a></li>
+			<li><a href=".">NGHỆ THUẬT</a></li>
+		</ul>
+<div class="dangnhap">
+	<a href=".">ĐĂNG NHẬP</a>
+</div>
+</div>
+</div>
+	
+	
+	<button id="chatbot-toggle-btn"><img src="images/bot.png" alt="bot" width="50px"></button>
+    <div class="chatbot-popup" id="chatbot-popup">
+        <div class="chat-header">
+            <span> <a href="https://www.thecodinghubs.com/" target="_blank">Chatbox</a></span>
+			<button id="close-btn">&times;</button>
+        </div>
+        <div class="chat-box" id="chat-box">
+			<div id="message-section">
+    </div>
+		</div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Gửi tin nhắn...">
+            <button id="send-btn"><img src="images/10233843.png" alt="enter" width="15px"></button>
+        </div>
+        <div class="copyright">
+            <a  href="https://www.thecodinghubs.com/" target="_blank"></a>
+        </div>
+    </div>
+</body>
+	<script>
+		const responses ={
+"hello":"Chào bạn",	
+"Hello":"Chào bạn",	
+"hi":" Chào bạn",
+"Hi":" Chào bạn",
+"xin chào":"Chào bạn",
+"Xin chào":"Chào bạn",
+"chào bạn":"Chào bạn",
+"Chào bạn":"Chào bạn",
+"tôi muốn tìm tranh sơn dầu":"Bạn có thể tìm tranh sơn dầu tại: </br> 1. Triển lãm và phòng tranh địa phương. </br> 2. Trang web bán tranh: MoonPicture.</br> 3. Cửa hàng tranh trong thành phố.",
+"tôi muốn tìm tranh sơn dầu?":"Bạn có thể tìm tranh sơn dầu tại: </br> 1. Triển lãm và phòng tranh địa phương. </br> 2. Trang web bán tranh: MoonPicture.</br> 3. Cửa hàng tranh trong thành phố.",
+"Tôi muốn tìm tranh sơn dầu":"Bạn có thể tìm tranh sơn dầu tại: </br> 1. Triển lãm và phòng tranh địa phương. </br> 2. Trang web bán tranh: MoonPicture.</br> 3. Cửa hàng tranh trong thành phố.",
+"Tôi muốn tìm tranh sơn dầu?":"Bạn có thể tìm tranh sơn dầu tại: </br> 1. . </br> 2. Trang web bán tranh: MoonPicture.</br> 3. Cửa hàng tranh trong thành phố.",
+"tôi muốn tìm tranh màu nước":"Để tìm tranh màu nước, bạn có thể tham khảo những cách sau: </br> 1. Các trang web trực tuyến: MoonPicture. </br> 2. Bạn có thể vào SHOP của trang chúng tôi tham khảo.",
+"tôi muốn tìm tranh màu nước?":"Để tìm tranh màu nước, bạn có thể tham khảo những cách sau: </br> 1. Các trang web trực tuyến: MoonPicture. </br> 2. Bạn có thể vào SHOP của trang chúng tôi tham khảo.",
+"Tôi muốn tìm tranh màu nước":"Để tìm tranh màu nước, bạn có thể tham khảo những cách sau: </br> 1. Các trang web trực tuyến: MoonPicture. </br> 2. Bạn có thể vào SHOP của trang chúng tôi tham khảo.",
+"Tôi muốn tìm tranh màu nước?":"Để tìm tranh màu nước, bạn có thể tham khảo những cách sau: </br> 1. Các trang web trực tuyến: MoonPicture. </br> 2. Bạn có thể vào SHOP của trang chúng tôi tham khảo.",
+"tôi muốn tìm tranh lụa":"Để tìm tranh lụa, bạn có thể tham khảo những cách sau: </br> 1. Triển lãm và phòng tranh nghệ thuật: Các triển lãm nghệ thuật địa phương hoặc phòng tranh có thể có tranh lụa. </br> 2. Cửa hàng tranh: Một số cửa hàng nghệ thuật bán tranh lụa hoặc các sản phẩm thủ công. </br> 3. Trang web bán tranh trực tuyến: MoonPicture hoặc các nền tảng nghệ thuật khác có thể cung cấp tranh lụa.",
+"tôi muốn tìm tranh lụa?":"Để tìm tranh lụa, bạn có thể tham khảo những cách sau: </br> 1. Triển lãm và phòng tranh nghệ thuật: Các triển lãm nghệ thuật địa phương hoặc phòng tranh có thể có tranh lụa. </br> 2. Cửa hàng tranh: Một số cửa hàng nghệ thuật bán tranh lụa hoặc các sản phẩm thủ công. </br> 3. Trang web bán tranh trực tuyến: MoonPicture hoặc các nền tảng nghệ thuật khác có thể cung cấp tranh lụa.",
+"Tôi muốn tìm tranh lụa":"Để tìm tranh lụa, bạn có thể tham khảo những cách sau: </br> 1. Triển lãm và phòng tranh nghệ thuật: Các triển lãm nghệ thuật địa phương hoặc phòng tranh có thể có tranh lụa. </br> 2. Cửa hàng tranh: Một số cửa hàng nghệ thuật bán tranh lụa hoặc các sản phẩm thủ công. </br> 3. Trang web bán tranh trực tuyến: MoonPicture hoặc các nền tảng nghệ thuật khác có thể cung cấp tranh lụa.",
+"Tôi muốn tìm tranh lụa?":"Để tìm tranh lụa, bạn có thể tham khảo những cách sau: </br> 1. Triển lãm và phòng tranh nghệ thuật: Các triển lãm nghệ thuật địa phương hoặc phòng tranh có thể có tranh lụa. </br> 2. Cửa hàng tranh: Một số cửa hàng nghệ thuật bán tranh lụa hoặc các sản phẩm thủ công. </br> 3. Trang web bán tranh trực tuyến: MoonPicture hoặc các nền tảng nghệ thuật khác có thể cung cấp tranh lụa.",
+"tôi muốn tìm tranh thủy mặc":"Để tìm tranh thủy mặc, bạn có thể tham khảo các cách sau: </br> 1. Triển lãm nghệ thuật: Các triển lãm hoặc phòng tranh nghệ thuật truyền thống thường có tranh thủy mặc. </br> 2. Cửa hàng tranh: Một số cửa hàng chuyên bán tranh truyền thống hoặc nghệ thuật châu Á có thể có tranh thủy mặc. </br> 3. Trang web bán tranh trực tuyến: Các nền tảng như Etsy, Saatchi Art, hoặc các website chuyên về nghệ thuật châu Á có thể cung cấp tranh thủy mặc.",
+"tôi muốn tìm tranh thủy mặc?":"Để tìm tranh thủy mặc, bạn có thể tham khảo các cách sau: </br> 1. Triển lãm nghệ thuật: Các triển lãm hoặc phòng tranh nghệ thuật truyền thống thường có tranh thủy mặc. </br> 2. Cửa hàng tranh: Một số cửa hàng chuyên bán tranh truyền thống hoặc nghệ thuật châu Á có thể có tranh thủy mặc. </br> 3. Trang web bán tranh trực tuyến: Các nền tảng như Etsy, Saatchi Art, hoặc các website chuyên về nghệ thuật châu Á có thể cung cấp tranh thủy mặc.",
+"Tôi muốn tìm tranh thủy mặc":"Để tìm tranh thủy mặc, bạn có thể tham khảo các cách sau: </br> 1. Triển lãm nghệ thuật: Các triển lãm hoặc phòng tranh nghệ thuật truyền thống thường có tranh thủy mặc. </br> 2. Cửa hàng tranh: Một số cửa hàng chuyên bán tranh truyền thống hoặc nghệ thuật châu Á có thể có tranh thủy mặc. </br> 3. Trang web bán tranh trực tuyến: Các nền tảng như Etsy, Saatchi Art, hoặc các website chuyên về nghệ thuật châu Á có thể cung cấp tranh thủy mặc.",			
+"Tôi muốn tìm tranh thủy mặc?":"Để tìm tranh thủy mặc, bạn có thể tham khảo các cách sau: </br> 1. Triển lãm nghệ thuật: Các triển lãm hoặc phòng tranh nghệ thuật truyền thống thường có tranh thủy mặc. </br> 2. Cửa hàng tranh: Một số cửa hàng chuyên bán tranh truyền thống hoặc nghệ thuật châu Á có thể có tranh thủy mặc. </br> 3. Trang web bán tranh trực tuyến: Các nền tảng như Etsy, Saatchi Art, hoặc các website chuyên về nghệ thuật châu Á có thể cung cấp tranh thủy mặc.",			
+			
+};
+
+document.getElementById('chatbot-toggle-btn').addEventListener('click', toggleChatbot);
+document.getElementById('close-btn').addEventListener('click', toggleChatbot);
+document.getElementById('send-btn').addEventListener('click', sendMessage);
+document.getElementById('user-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+function toggleChatbot() {
+    const chatbotPopup = document.getElementById('chatbot-popup');
+    chatbotPopup.style.display = chatbotPopup.style.display === 'none' ? 'block' : 'none';
+}
+
+function sendMessage() {
+    const userInput = document.getElementById('user-input').value.trim();
+    if (userInput !== '') {
+        appendMessage('user', userInput);
+        respondToUser(userInput.toLowerCase());
+        document.getElementById('user-input').value = '';
+    }
+}
+
+function respondToUser(userInput) {
+    const response = responses[userInput] || responses["default"];
+    setTimeout(function() {
+        appendMessage('bot', response);
+    }, 500);
+}
+
+function appendMessage(sender, message) {
+    const chatBox = document.getElementById('chat-box');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+    messageElement.innerHTML = message;
+    chatBox.appendChild(messageElement);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    if (sender === 'bot' && message === responses["default"]) {
+        const buttonYes = document.createElement('button');
+        buttonYes.textContent = '✔ Yes';
+        buttonYes.onclick = function() {
+            appendMessage('bot', responses["expert"]);
+        };
+        const buttonNo = document.createElement('button');
+        buttonNo.textContent = '✖ No';
+        buttonNo.onclick = function() {
+            appendMessage('bot', responses["no"]);
+        };
+const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('button-container');
+        buttonContainer.appendChild(buttonYes);
+        buttonContainer.appendChild(buttonNo);
+        chatBox.appendChild(buttonContainer);
+    }
+}
+	</script>
+</html>
