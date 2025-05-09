@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TQNTech - Nền tảng tư vấn nghề nghiệp, giúp học sinh, sinh viên chọn lựa ngành nghề phù hợp với đam mê và tiềm năng." />
+  <meta name="keywords" content="TQNTech, hướng nghiệp, tư vấn nghề nghiệp, trắc nghiệm nghề nghiệp, phát triển nghề nghiệp" />
+  <title>TQNTech - Giới thiệu</title>
+  <link href="styles/Gioithieu.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <img src="images/lg.png" alt="Logo TQNTech" class="logo" />
+    <nav class="menu" role="navigation" aria-label="Menu chính">
+      <ul class="nav-links">
+        <li><a href="Trang1.html">Trang chủ</a></li>
+        <li><a href="Gioithieu.html">Giới thiệu</a></li>
+        <li><a href="Huongnghiep.html">Hướng nghiệp</a></li>
+        <li><a href="Tuvan.html">Tư vấn</a></li>
+        <li><a href="Chiase.html">Chia sẻ</a></li>
+        <li class="search-box">
+          <form class="search-form" onsubmit="return handleSearch(event)">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm..." aria-label="Tìm kiếm" required>
+            <button type="submit">🔍</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+    <div class="hamburger-menu" onclick="toggleMenu()" aria-label="Mở menu">&#9776;</div>
+  </header>
+
+  <main>
+    <section class="about-wrapper">
+        <h2>Lịch sử phát triển</h2>
+        <p>⏳ Cuối 2022: Ý tưởng TQNTech ra đời tại hội thảo giáo dục, với mục tiêu minh bạch hoá thông tin nghề nghiệp.</p>
+        <p>🚀 Đầu 2025: Nền tảng chính thức đi vào hoạt động, kết quả trắc nghiệm được đánh giá cao về độ tin cậy, mở rộng hợp tác với chuyên gia hướng nghiệp.</p>
+        <h3>Định hướng tương lai</h3>
+        <ul>
+          <li>Phát triển AI tư vấn 24/7, cá nhân hoá lộ trình nghề nghiệp theo từng profile.</li>
+          <li>Mở rộng hợp tác với hơn 50 trường ĐH, CĐ để cập nhật yêu cầu thực tế.</li>
+          <li>Xây dựng cộng đồng TQNTech Community để chia sẻ kinh nghiệm và cơ hội nghề nghiệp.</li>
+          <li>Ra mắt ứng dụng di động vào Q3/2025, đưa tư vấn hướng nghiệp lên tầm cao mới.</li>
+        </ul>
+        <h2>Tầm nhìn</h2>
+        <p>Trở thành nền tảng uy tín hàng đầu tại Việt Nam, giúp hàng triệu bạn trẻ tự tin chọn đúng nghề, phát huy tối đa tiềm năng và đam mê.</p>
+        <h2>Giá trị cốt lõi</h2>
+        <ul>
+          <li>Minh bạch: Thông tin rõ ràng, dễ hiểu.</li>
+          <li>Chính xác: Dữ liệu và phân tích dựa trên nghiên cứu chuyên sâu.</li>
+          <li>Dễ sử dụng: Giao diện thân thiện, thao tác đơn giản.</li>
+          <li>Cập nhật: Luôn làm mới nội dung theo xu hướng thị trường.</li>
+        </ul>
+        <h2>Ý nghĩa cộng đồng</h2>
+        <p>Hướng nghiệp đúng đắn không chỉ thay đổi cuộc đời mỗi cá nhân mà còn mang lại lợi ích lâu dài cho gia đình, nhà trường và xã hội.</p>
+        <ul>
+          <li>Giảm tình trạng bỏ học và thất nghiệp do chọn sai ngành.</li>
+          <li>Định hướng rõ ràng giúp học sinh, sinh viên tối ưu hóa thời gian và chi phí học tập.</li>
+          <li>Hỗ trợ trường học thiết kế chương trình sát với nhu cầu thực tế.</li>
+          <li>Phụ huynh hiểu và đồng hành cùng con trên con đường phát triển.</li>
+          <li>Cung cấp nhân lực chất lượng cao cho thị trường lao động.</li>
+          <li>Giúp doanh nghiệp tuyển dụng nhanh, đúng chuyên môn.</li>
+          <li>Nâng cao nhận thức xã hội về vai trò của hướng nghiệp trong giáo dục.</li>
+          <li>Thu hẹp khoảng cách giữa các lĩnh vực nghề nghiệp.</li>
+          <li>Ươm mầm thế hệ trẻ sáng tạo, có trách nhiệm với cộng đồng.</li>
+          <li>Thúc đẩy hợp tác chặt chẽ giữa nhà trường, gia đình và xã hội.</li>
+        </ul>
+        <h2>Hệ thống phản hồi và cải tiến</h2>
+        <p>Chúng tôi luôn lắng nghe ý kiến người dùng để nâng cấp trải nghiệm:</p>
+        <ul>
+          <li>📬 Mỗi người dùng đều có thể gửi góp ý, đánh giá chất lượng kết quả.</li>
+          <li>🔄 Hệ thống cập nhật dữ liệu ngành nghề hàng quý theo xu hướng thị trường.</li>
+          <li>🧠 Sử dụng AI để nâng cao độ chính xác trong tư vấn ngành nghề.</li>
+        </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Liên hệ</h3>
+        <p><strong>Email:</strong> <a href="mailto:TQNTech@gmail.com">TQNTech@gmail.com</a></p>
+        <p><strong>Hotline:</strong> <a href="tel:0123456789">0123 456 789</a></p>
+      </div>
+      <div class="footer-column">
+        <h3>Địa chỉ</h3>
+        <p>123 Đường 30/4, P12, TP Vũng Tàu</p>
+        <p><strong>Giờ làm việc:</strong> 7:00 - 17:00</p>
+      </div>
+      <div class="footer-column">
+        <h3>Kết nối</h3>
+        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/TQN.Tech.123" target="_blank">TQN.Tech.123</a></p>
+        <p><strong>Zalo:</strong> 0123 456 789</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Bản quyền thuộc quyền sở hữu TQNTech</p>
+    </div>
+  </footer>
+
+  <button id="topButton" onclick="scrollToTop()" aria-label="Cuộn lên đầu trang"><b>^</b></button>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('active');
+    }
+    window.onscroll = function () {
+      const topButton = document.getElementById("topButton");
+      topButton.style.display = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? "block" : "none";
+    };
+	 window.onscroll = function() {
+   const topButton = document.getElementById("topButton");
+   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+	   topButton.style.display = "block";
+   } else {
+	   topButton.style.display = "none";
+   }
+};
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function handleSearch(event) {
+      event.preventDefault();
+      const query = document.getElementById("searchInput").value.trim();
+      if (query) window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+    }
+  </script>
+</body>
+</html>
