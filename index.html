@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TQNTech - Tư vấn chọn ngành nghề</title>
+	<link href="styles/default1.css" rel="stylesheet" />
+</head>
+<body>
+<header>
+	<img src="images/lg.png" alt="Logo TQNTech" class="logo" />
+
+	<nav class="menu" role="navigation" aria-label="Menu chính">
+	<ul class="nav-links">
+	  <li><a href="index.html">Trang chủ</a></li>
+	  <li><a href="Gioithieu.html">Giới thiệu</a></li>
+	  <li><a href="Huongnghiep.html">Hướng nghiệp</a></li>
+	  <li><a href="Tuvan.html">Tư vấn</a></li>
+	  <li><a href="Chiase.html">Chia sẻ</a></li>
+	</ul>
+	</nav>
+
+  <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+</header>
+	<section class="banner-slider">
+  	<div class="slide active" style="background-image: url('images/bannerqc.gif');">
+  	</div>
+		<div class="slide" style="background-image: url('images/banner1.png');"></div>
+		<div class="slide" style="background-image: url('images/gioithieu.png');"></div>
+		<div class="slide" style="background-image: url('images/banner6.png');"></div>
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</section>
+	<section class="about">
+		<h2>Về chúng tôi</h2>
+		<p>TQNTech cung cấp công cụ tư vấn chọn ngành nghề dựa trên sở thích và kỹ năng của bạn.</p>
+	</section>
+
+	<section class="benefits">
+  <h2>Lợi ích khi sử dụng TQNTech</h2>
+  <ul>
+    <li>✅ Khám phá ngành nghề phù hợp với sở thích & kỹ năng cá nhân.</li>
+    <li>✅ Định hướng rõ ràng giúp bạn tiết kiệm thời gian và chi phí học tập.</li>
+    <li>✅ Cập nhật thông tin ngành nghề, xu hướng việc làm mới nhất.</li>
+    <li>✅ Hệ thống trắc nghiệm thông minh – dễ dùng, nhanh chóng, hiệu quả.</li>
+  </ul>
+</section>
+
+<section class="testimonials">
+  <h2>Người dùng nói gì về TQNTech</h2>
+  <div class="testimonial-list">
+    <div class="testimonial-item">
+      <p>"Nhờ TQNTech, mình đã chọn được ngành Công nghệ thông tin đúng với đam mê!"</p>
+      <span>– Hoàng Đăng, Sinh viên năm nhất</span>
+    </div>
+    <div class="testimonial-item">
+      <p>"Trắc nghiệm rất dễ hiểu và kết quả rất hợp lý. Cảm ơn TQNTech!"</p>
+      <span>– Gia Huy, Học sinh lớp 12</span>
+    </div>
+  </div>
+</section>
+
+<section class="call-to-action">
+	<h2>Bạn đã sẵn sàng khám phá ngành nghề phù hợp?</h2>
+	<p>Tham gia trắc nghiệm ngay để hiểu rõ bản thân và chọn hướng đi đúng đắn!</p>
+	<div class="start-button">
+		<a href="Huongnghiep.html" class="btn-start">Bắt đầu ngay</a>
+	</div>
+</section>
+	<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Liên hệ</h3>
+      <p><strong>Email:</strong> <a href="mailto:TQNTech@gmail.com">TQNTech@gmail.com</a></p>
+      <p><strong>Hotline:</strong> <a href="tel:0123456789">0123 456 789</a></p>
+    </div>
+    <div class="footer-column">
+      <h3>Địa chỉ</h3>
+      <p>123 Đường 30/4, P12, TP Vũng Tàu</p>
+      <p><strong>Giờ làm việc:&ensp;</strong> 7:00 - 17:00</p>
+    </div>
+    <div class="footer-column">
+      <h3>Kết nối</h3>
+      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/TQN.Tech.123" target="_blank">TQN.Tech.123</a></p>
+      <p><strong>Zalo:&ensp;</strong> 0123 456 789</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; Bản quyền thuộc quyền sở hữu TQNTech</p>
+  </div>
+</footer>
+<button id="topButton" onclick="scrollToTop()" aria-label="Cuộn lên đầu trang"><b>^</b></button>
+	<script>
+			function toggleMenu() {
+	  document.querySelector('.nav-links').classList.toggle('show');
+	}
+	 window.onscroll = function() {
+   const topButton = document.getElementById("topButton");
+   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+	   topButton.style.display = "block";
+   } else {
+	   topButton.style.display = "none";
+   }
+};
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function handleSearch(event) {
+      event.preventDefault();
+      const query = document.getElementById("searchInput").value.trim();
+      if (query) window.location.href = `Timkiem.html?q=${encodeURIComponent(query)}`;
+    }
+		function toggleMenu() {
+    		const menu = document.querySelector('.menu');
+    		menu.classList.toggle('active');
+		}
+		
+		//Chuyên đổi ảnh
+document.addEventListener("DOMContentLoaded", function () {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+  let slideInterval;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      slide.style.opacity = '0';
+    });
+    slides[index].classList.add('active');
+    slides[index].style.opacity = '1';
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlideFunc() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetInterval();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    prevSlideFunc();
+    resetInterval();
+  });
+
+  function startInterval() {
+    slideInterval = setInterval(nextSlide, 4000);
+  }
+
+  function resetInterval() {
+    clearInterval(slideInterval);
+    startInterval();
+  }
+
+  showSlide(currentSlide);
+  startInterval();
+});
+		
+</script>
+</body>
+</html>

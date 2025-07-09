@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kết quả tìm kiếm - TQNTech</title>
+  <link href="styles/default1.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Kết quả tìm kiếm</h1>
+  </header>
+
+  <main>
+    <p id="searchQuery"></p>
+    <div id="results">
+      <!-- Kết quả tìm kiếm sẽ hiển thị ở đây -->
+    </div>
+  </main>
+
+  <script>
+    // Lấy từ khóa tìm kiếm từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get("q");
+
+    // Hiển thị từ khóa đã tìm
+    document.getElementById("searchQuery").innerText = `Bạn đã tìm kiếm: "${query}"`;
+
+    // Gợi ý kết quả mẫu (có thể nâng cấp bằng tìm kiếm dữ liệu thật)
+    const resultsContainer = document.getElementById("results");
+
+    if (query) {
+      const suggestions = [
+        { keyword: "CNTT", link: "Huongnghiep.html", title: "Ngành Công nghệ thông tin" },
+        { keyword: "Kinh tế", link: "Huongnghiep.html", title: "Ngành Kinh tế" },
+        { keyword: "Y dược", link: "Huongnghiep.html", title: "Ngành Y Dược" },
+        { keyword: "Thiết kế", link: "Huongnghiep.html", title: "Ngành Thiết kế đồ họa" }
+      ];
+
+      const filtered = suggestions.filter(item =>
+        item.keyword.toLowerCase().includes(query.toLowerCase())
+      );
+
+      if (filtered.length > 0) {
+        filtered.forEach(item => {
+          const div = document.createElement("div");
+          div.innerHTML = `<p><a href="${item.link}">${item.title}</a></p>`;
+          resultsContainer.appendChild(div);
+        });
+      } else {
+        resultsContainer.innerHTML = "<p>Không tìm thấy kết quả phù hợp.</p>";
+      }
+    } else {
+      resultsContainer.innerHTML = "<p>Không có từ khóa tìm kiếm.</p>";
+    }
+  </script>
+</body>
+</html>

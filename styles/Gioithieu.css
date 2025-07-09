@@ -1,0 +1,255 @@
+@charset "utf-8";
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: white;
+  line-height: 1.6;
+  padding-top: 10px;
+}
+header {
+  position: fixed; top: 0; left: 0; width: 100%;
+  z-index: 999; padding: 10px 40px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 2px solid #D6298A;
+}
+section.about-tqntech {
+  margin-top: 120px; /* header cao ~70px + 50px khoảng trống */
+}
+.logo {
+	width: 150px;
+	height: 50px;
+	flex: 0 0 auto;
+}
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: white;
+  	justify-content: space-between;
+  	align-items: center;
+}
+.nav-links {
+	margin-left: auto;
+  	list-style: none;
+  	display: flex;
+  	gap: 40px;
+	align-items: center;
+  	justify-content: flex-end; /* Thêm dòng này */
+  	flex: 1;
+}
+.menu ul, li {
+  	list-style: none;
+	padding-left: 75px;
+}
+.nav-links li {
+  	position: relative;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #D6298A; /* màu gạch */
+  transition: width 0.3s ease;
+}
+.nav-links a {
+  	color: #0002A8;
+  	text-decoration: none;
+	display: block;
+  	transition: background 0.3s;
+	position: relative;
+	padding-bottom: 5px;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-links a:hover {
+	background-color: ghostwhite;
+ 	color: #D6298A;
+  	border-radius: 5px;
+}
+.menu a {
+	text-decoration: none;
+	color: #0002A8;
+	font-weight: bold;
+	font-size: 26px;
+	transition: color 0.3s;
+	text-align: center;
+	transform: translate(-90px, 5px);
+}
+
+.menu a:hover {
+	color: #D6298A;
+}
+.hamburger-menu {
+	display: none;
+	color: #0002A8;
+	cursor: pointer;
+	font-size: 28px;
+	margin-left: auto;
+	flex: 0 0 auto;
+}
+.about-tqntech p,
+.about-tqntech ul {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.about-tqntech h3 {
+  margin-top: 1.5rem;
+}
+.about-tqntech img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+}
+section {
+	padding: 25px 20px;
+	background: white;
+	margin: 30px auto;
+	width: 85%;
+	border-radius: 12px;
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+	max-width: 1200px;
+}
+a:focus, button:focus, input:focus {
+  outline: 2px solid #D6298A;
+  outline-offset: 2px;
+}
+.about-tqntech h1 {
+	color: #D6298A;
+}
+h3 {
+	color: #0002A8;
+}
+footer {
+	width: 100%;
+	background: #5F51FF;
+	color: white;
+	position: relative;
+	padding: 40px 20px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+footer a {
+	text-decoration: none;
+	color: white;
+	display: inline-flex;
+	align-items: center;
+	transition: color 0.3s;
+	position: relative;
+	padding-left: 30px; 
+}
+footer a::before {
+	content: "🔗";
+	position: absolute;
+	left: 0;
+	font-size: 18px;
+	line-height: 1.6;
+}
+footer .footer-column p {
+	display: flex;
+	align-items: center;	
+}
+footer a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 0;
+	height: 2px;
+	background-color: #FFD700;
+	transition: width 0.3s;
+}
+footer a:hover::after {
+	width: 100%;
+}
+
+footer a:hover {
+	color: #FFD700;
+}
+.footer-container {
+	max-width: 1200px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 0 40px;
+	gap: 40px;
+}
+
+.footer-column {
+	flex: 1;
+	min-width: 260px;
+	margin: 10px;
+	font-weight: bold;
+}
+.footer-column h3 {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.footer-column p {
+	font-size: 16px;
+	margin-bottom: 8px;
+	line-height: 1.6;
+}
+
+.footer-bottom {
+	text-align: center;
+	margin-top: 30px;
+	border-top: 1.5px solid #E36DAF;
+	padding-top: 15px;
+	font-size: 15px;
+	width: 100%;
+}
+.footer-bottom p {
+	color: #FFF;
+}
+#topButton {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	z-index: 100;
+	background-color: #F7CACD;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 50%;
+	font-size: 18px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+	transition: background-color 0.3s;
+}
+#topButton:hover {
+	background-color: #DE4D86;
+}
+@media (max-width: 768px) {
+  .nav-links {
+	flex-direction: column;
+	display: none;
+	background: white;
+	position: absolute;
+	top: 70px;
+	right: 0;
+	width: 100%;
+	border-top: 1px solid #ccc;
+  }
+  .nav-links.show {
+	display: flex;
+  }
+  .hamburger-menu {
+	display: block;
+  }
+}
